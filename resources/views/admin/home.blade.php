@@ -2,9 +2,14 @@
 
 @section('contents')
 <!--<div class="bg-image" id="bg-image"></div>-->
-<h1 id="beranda">Selamat datang, admin</h1>
-<h2 id="beranda">Tetap semangat dan teruslah bekerja!</h2>
-<h3 id="beranda">Jangan lupa minum vitamin</h3>
-<h4 id="beranda">Semoga perasaanmu diterima ayang</h4>
+<center><img src="{{url('/images/logo.png')}}" alt="Logo"></center>
+<br>
+<h3 style="text-align: justify"><i>Integrated Civil Report</i> (ICIPORT) adalah sebuah solusi terintegrasi untuk menyampaikan dan menanggapi keluhan
+    dari masyarakat. Masyarakat mengeluhkan permasalahan di daerah mereka yang belum sama
+    sekali diperhatikan oleh pemerintah, sedangkan untuk sekedar menyampaikan
+    keluhan saja sangat merepotkan dari segi pelayanan dan tindakan. Maka
+    diperlukanlah solusi terintegrasi untuk menyampaikan dan menanggapi keluhan
+    tersebut.
+</h3>
 
 @endsection
