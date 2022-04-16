@@ -45,7 +45,7 @@ Route::prefix('admin')->group(function(){
     Route::get('/detaillaporan/{id}',[AdminController::class,'detaillaporan'])->name('detaillaporan')->middleware('auth');
     Route::get('/editlaporan/{id}',[AdminController::class,'editlaporan'])->name('editlaporan')->middleware('auth');
     Route::post('/saveeditlaporan/{id}',[AdminController::class,'saveeditlaporan'])->name('saveeditlaporan')->middleware('auth');
-    Route::get('/deletelaporan/{id}',[AdminController::class,'deletelaporan'])->name('deletelaporan')->middleware('auth');
+    Route::post('/deletelaporan/{id}',[AdminController::class,'deletelaporan'])->name('deletelaporan')->middleware('auth');
     });
     Route::post('/logout', [LogInController::class, 'logout'])->name('pelaporan-logout');
     Route::post('/adminlogout', [AdminController::class, 'logout'])->name('admin-logout');
