@@ -22,7 +22,7 @@
 
 <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Tanggapan</label>
-    <input type="text" class="form-control" id="description" value="{{ $keluhan->balasan_admin }}" readonly>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" readonly>{{ $keluhan->balasan_admin }}</textarea>
 </div>
 
 <div class="mb-3">
@@ -30,4 +30,8 @@
     <input type="text" class="form-control" id="description" value="{{ $keluhan->waktu_balasan }}" readonly>
 </div>
 
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Status</label>
+    <input type="text" class="form-control" id="description" value="{{ $keluhan->status }}" readonly>
+</div>
 @endsection

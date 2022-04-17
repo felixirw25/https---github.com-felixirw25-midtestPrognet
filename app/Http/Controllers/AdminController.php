@@ -68,17 +68,23 @@ class AdminController extends Controller
 
     public function saveeditlaporan(Request $request, $id) {
         $key = $request->validate([
-            'balasan_admin' => 'required|max:50',
+            'balasan_admin' => 'max:50',
         ]);
 
         $value = array(
             $balasan_admin = 'judul_keluhan' => $request-> input('balasan_admin'),
         );
 
-        $time = Carbon::now()->format('Y-m-d h:m:s');
+        $time = Carbon::now()->format('Y-m-d H:i:s');
         $keluhan = Keluhan::find($id);
         $keluhan->balasan_admin = $request->balasan_admin;
         $keluhan->waktu_balasan = $time;
+        if ($keluhan->balasan_admin != "") {
+            $keluhan->status = "Ditanggapi";
+        }
+        else {
+            $keluhan->status = "Menunggu";
+        }
         $keluhan->save();
 
         return redirect()->route('laporan-list');

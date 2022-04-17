@@ -6,24 +6,29 @@
     <thead class="text-center">
       <tr>
         <th scope="col">No</th>
+        <th scope="col">Nama</th>
         <th scope="col">Keluhan</th>
-        <th scope="col">Deskripsi</th>
-        <th scope="col">Waktu Keluhan</th>
         <th scope="col">Tanggapan</th>
-        <th scope="col">Waktu Tanggapan</th>
+        <th scope="col">Status</th>
         <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody class="text-center">
-        @foreach ($keluhans as $keluhan)
-        @if ($keluhan->user_id==\Auth::user()->id && $keluhan->is_delete==0)
+      @php
+        $i = 1;
+      @endphp
+      @foreach ($keluhans as $keluhan)
+      @if ($keluhan->user_id==\Auth::user()->id && $keluhan->is_delete==0)
         <tr>
-          <td>{{ $loop->iteration}}</td>
+          <td>{{ $i }}
+            @php
+              $i += 1;
+            @endphp
+          </td>
+          <td>{{ $keluhan->users->nama}}</td>
           <td>{{ $keluhan->judul_keluhan }}</td>
-          <td>{{ Str::limit($keluhan->keluhan_user), 100 }}</td>
-          <td>{{ $keluhan->waktu_keluhan }}</td>
-          <td>{{ Str::limit($keluhan->balasan_admin), 100 }}</td>
-          <td>{{ $keluhan->waktu_balasan }}</td>
+          <td>{{ $keluhan->balasan_admin }}</td>
+          <td>{{ $keluhan->status }}</td>
           <td>
             <form action="{{ route('keluhan-delete', $keluhan->id) }}" method="POST" onsubmit="return confirm('Delete this data?')"> <!--klo ada bnyk parameter buat dlm array-->
               @csrf

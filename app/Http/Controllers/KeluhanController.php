@@ -34,7 +34,7 @@ class KeluhanController extends Controller
             $keluhan_user = 'keluhan_user'=> $request-> input('keluhan_user'),
         );
 
-        $time = Carbon::now()->format('Y-m-d h:m:s');
+        $time = Carbon::now()->format('Y-m-d H:i:s');
         $keluhan = Keluhan::create([
             'judul_keluhan' => $request-> input('judul_keluhan'),
             'keluhan_user'=> $request-> input('keluhan_user'),
@@ -71,7 +71,7 @@ class KeluhanController extends Controller
             $keluhan_user = 'keluhan_user'=> $request-> input('keluhan_user'),
         );
 
-        $time = Carbon::now()->format('Y-m-d h:m:s');
+        $time = Carbon::now()->format('Y-m-d H:i:s');
         $keluhan = Keluhan::find($id);
         $keluhan->judul_keluhan = $request->judul_keluhan;
         $keluhan->keluhan_user = $request->keluhan_user;

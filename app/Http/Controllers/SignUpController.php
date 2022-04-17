@@ -10,7 +10,6 @@ class SignUpController extends Controller
 {
     public function index() {
         $judul = "Sign Up";
-        //$kamars = Kamar::orderBy('id','asc')->get();
         $formdata = [
             'pengenal' => ['select', "Pengenal", ['KTP', 'Paspor']],
             'nomor_pengenal' => ['text', "Nomor Pengenal"],

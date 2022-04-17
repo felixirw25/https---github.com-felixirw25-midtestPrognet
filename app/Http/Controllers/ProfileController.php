@@ -21,11 +21,11 @@ class ProfileController extends Controller
     public function update(Request $request) {
         $key = $request->validate([
             'pengenal' => ['required','max:255'],
-            'nomor_pengenal' => ['required','integer','unique:users'],
+            'nomor_pengenal' => ['required','integer'],
             'nama' => ['required','min:2','max:255'],
             'alamat' => ['required','min:10'],
             'telepon' => ['required','numeric'],
-            'email' => ['required','min:5','unique:users','email:dns'],
+            'email' => ['required','min:5','email:dns'],
             'password' => ['required','min:5'],
             'repassword' => ['required','same:password'],
         ]);
